@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  disciplina_id: 1
+  mestre_id: 1
+  studio_id: 1
+  data: 2016-03-11
+  hora_inicial: 2016-03-11 04:52:55
+  hora_final: 2016-03-11 04:52:55
+
+two:
+  disciplina_id: 1
+  mestre_id: 1
+  studio_id: 1
+  data: 2016-03-11
+  hora_inicial: 2016-03-11 04:52:55
+  hora_final: 2016-03-11 04:52:55

@@ -1,0 +1,2 @@
+module MestresHelper
+end

@@ -1,0 +1,54 @@
+<%= form_for(@evento, :html => {:multipart => true}) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span10">
+      <!--Body content-->
+      <div class="field">
+    <%= f.label :disciplina_id %><br>
+    <%= collection_select(:evento, :disciplina_id, @disciplinas.all, :id, :nome, prompt: true)%>
+  </div>
+  <div class="field">
+    <%= f.label :mestre_id %><br>
+    <%= collection_select(:evento, :mestre_id, @mestres.all, :id, :nome, prompt: true)%>
+  </div>
+  <div class="field">
+    <%= f.label :studio_id %><br>
+    <%= collection_select(:evento, :studio_id, @studios.all, :id, :nome, prompt: true)%>
+  </div><br>
+  <div class="form-group">
+    <%= f.label :data %>
+    <%= f.date_field :data %>
+     <%= f.label :hora_inicial %>
+    <%= f.time_field :hora_inicial %>
+      <%= f.label :hora_final %>
+    <%= f.time_field :hora_final %>
+  </div>
+        <div class="row"></div><br>
+  
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                eventos_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+ 
+    </div>
+  </div>
+</div>
+<% end %>

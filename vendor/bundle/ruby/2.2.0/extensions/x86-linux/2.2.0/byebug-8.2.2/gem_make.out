@@ -1,0 +1,15 @@
+/home/carlos/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20160311-3380-j5zpri.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling breakpoint.c
+compiling context.c
+compiling locker.c
+compiling byebug.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20160311-3380-1kfu11o/byebug

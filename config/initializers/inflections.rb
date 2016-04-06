@@ -9,11 +9,11 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
     inflect.plural  'compromisso','compromissos'
-    inflect.plural  'mestre','mestres'
+    inflect.plural  'professor','professores'
     inflect.plural  'disciplina','disciplinas'
-    inflect.plural 'disciplinamestre','disciplinasmestres'
+    inflect.plural 'disciplina_professor','disciplinas_professores'
     inflect.plural  'evento','eventos'
-    inflect.plural  'studio','studios'
+    inflect.plural  'estudio','estudios'
 end
 
 # These inflection rules are supported but not enabled by default:

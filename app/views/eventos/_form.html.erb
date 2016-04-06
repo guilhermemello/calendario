@@ -1,44 +1,56 @@
-<%= form_for(@evento, :html => {:multipart => true}) do |f| %>
-  <% if @evento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+<%= form_for @evento, :html => { :class => "form-horizontal evento" } do |f| %>
 
-      <ul>
-      <% @evento.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @evento.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @evento.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
-  
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <!--Sidebar content-->
+
+  <div class="form-group">
+    <%= f.label :disciplina_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= collection_select(:evento, :disciplina_id, @disciplinas.all, :id, :nome, prompt: true)%>
     </div>
-    <div class="span10">
-      <!--Body content-->
-      <div class="field">
-    <%= f.label :disciplina_id %><br>
-    <%= collection_select(:evento, :disciplina_id, @disciplinas.all, :id, :nome, prompt: true)%>
-  </div>
-  <div class="field">
-    <%= f.label :mestre_id %><br>
-    <%= collection_select(:evento, :mestre_id, @mestres.all, :id, :nome, prompt: true)%>
-  </div>
-  <div class="field">
-    <%= f.label :studio_id %><br>
-    <%= collection_select(:evento, :studio_id, @studios.all, :id, :nome, prompt: true)%>
+    <%=f.error_span(:disciplina_id) %>
+    <%= f.label :professor_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= collection_select(:evento, :professor_id, @professores.all, :id, :nome, prompt: true)%>
+    </div>
+    <%=f.error_span(:professor_id) %>
   </div><br>
   <div class="form-group">
-    <%= f.label :data %>
-    <%= f.date_field :data %>
-     <%= f.label :hora_inicial %>
-    <%= f.time_field :hora_inicial %>
-      <%= f.label :hora_final %>
-    <%= f.time_field :hora_final %>
-  </div>
-        <div class="row"></div><br>
+    <%= f.label :estudio_id, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-4">
+      <%= collection_select(:evento, :estudio_id, @estudios.all, :id, :nome, prompt: true)%>
+    </div>
+     <%=f.error_span(:estudio_id) %>
+     <%= f.label :data, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-3">
+      <%= f.date_field :data, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:data) %>
+  </div><br>
+  <div class="form-group">
+    <%= f.label :hora_inicial, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-3">
+      <%= f.time_field :hora_inicial, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:hora_inicial) %>
+    <%= f.label :hora_final, :class => 'control-label col-lg-3' %>
+    <div class="col-lg-3">
+      <%= f.time_field :hora_final, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:hora_final) %>
+  </div><br>
   
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
@@ -47,8 +59,5 @@
                 eventos_path, :class => 'btn btn-default' %>
     </div>
   </div>
- 
-    </div>
-  </div>
-</div>
+
 <% end %>

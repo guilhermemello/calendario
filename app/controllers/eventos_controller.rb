@@ -80,12 +80,12 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params.require(:evento).permit(:disciplina_id, :mestre_id, :studio_id, :data, :hora_inicial, :hora_final)
+      params.require(:evento).permit(:disciplina_id, :professor_id, :estudio_id, :data, :hora_inicial, :hora_final)
     end
     def preparar_form
-      @mestres = Mestre.order :nome
+      @professores = Professor.order :nome
       @disciplinas = Disciplina.order :nome
-      @studios = Studio.order :nome
+      @estudios = Estudio.order :nome
     end
 
 end

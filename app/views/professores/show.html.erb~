@@ -1,0 +1,27 @@
+<%- model_class = Professor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @professor.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:matricula) %>:</strong></dt>
+  <dd><%= @professor.matricula %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:celular) %>:</strong></dt>
+  <dd><%= @professor.celular %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @professor.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:foto) %>:</strong></dt>
+  <dd>  <%=image_tag(@professor.foto_url, :width => 200) if @professor.foto.present? %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              professore_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_professore_path(@professor), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              professore_path(@professor),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,60 @@
+<%= form_for(@evento, :html => {:multipart => true}) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div class="form-group">
+    <%= f.label :disciplina_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= collection_select(:evento, :disciplina_id, @disciplinas.all, :id, :nome, prompt: true)%>
+    </div>
+    <%=f.error_span(:disciplina_id) %>
+    <%= f.label :professor_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= collection_select(:evento, :professor_id, @professores.all, :id, :nome, prompt: true)%>
+    </div>
+    <%=f.error_span(:professor_id) %>
+  </div><br><br><br>
+  <div class="form-group">
+    <%= f.label :estudio_id, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-2">
+      <%= collection_select(:evento, :estudio_id, @estudios.all, :id, :nome, prompt: true)%>
+    </div>
+     <%=f.error_span(:estudio_id) %>
+     <%= f.label :data, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= f.date_field :data, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:data) %>
+  </div><br><br><br>
+  <div class="form-group">
+    <%= f.label :hora_inicial, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= f.time_field :hora_inicial, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:hora_inicial) %>
+    <%= f.label :hora_final, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= f.time_field :hora_final, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:hora_final) %>
+  </div><br><br><br>
+  
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-4">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                eventos_path, :class => 'btn btn-default' %>
+    </div>
+  </div><br><br><br>
+ 
+</div>
+<% end %>

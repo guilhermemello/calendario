@@ -27,6 +27,7 @@
         <td><%= evento.hora_final %></td>
 S
         <td>
+          <%= link_to t('.show', :default => t("herpers.links.show")), evento_path(evento), :class => 'btn btn-success btn-xs'%>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_evento_path(evento), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

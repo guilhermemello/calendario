@@ -20,7 +20,7 @@ class ProfessoresController < ApplicationController
 
   # GET /professors/new
   def new
-    @professor = Professor.new
+    @professore = Professor.new
   end
 
   # GET /professors/1/edit

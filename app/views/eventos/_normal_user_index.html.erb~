@@ -1,0 +1,34 @@
+<%- model_class = Evento -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:disciplina_id) %></th>
+      <th><%= model_class.human_attribute_name(:mestre_id) %></th>
+      <th><%= model_class.human_attribute_name(:studio_id) %></th>
+      <th><%= model_class.human_attribute_name(:data) %></th>
+      <th><%= model_class.human_attribute_name(:hora_inicial) %></th>
+      <th><%= model_class.human_attribute_name(:hora_final) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @eventos.each do |evento| %>
+      <tr>
+        <td><%= link_to evento.id, evento_path(evento) %></td>
+        <td><%= evento.disciplina_id %></td>
+        <td><%= evento.mestre_id %></td>
+        <td><%= evento.studio_id %></td>
+        <td><%= evento.data %></td>
+        <td><%= evento.hora_inicial %></td>
+        <td><%= evento.hora_final %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @eventos %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_evento_path,
+            :class => 'btn btn-primary' %>

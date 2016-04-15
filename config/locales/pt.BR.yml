@@ -1,0 +1,284 @@
+---
+pt-BR:
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Pr&oacute;ximo &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page_html:
+        zero:  "Nenhum registro encontrado"
+        one:   "Apenas 1 registro encontrado"
+        other: "Mostrando todos os %{count} registros encontrados"
+      multi_page: "Mostrando registros %{from} até %{to} de %{count} no total"
+      multi_page_html: "Mostrando registros %{from} até %{to} de %{count} no total"
+  activerecord:
+    errors:
+      models:
+        trabalho:
+          attributes:
+            redacao_enviada:
+              size_too_big: "O arquivo precisa ter no máximo 2 megabytes de tamanho"
+              blank: "Selecione um arquivo para envio"
+        user:
+          attributes:
+            nome:
+              blank: "não pode ficar em branco."
+              format: "deve ser completo."
+            email:
+              blank: "não pode ficar em branco."
+              invalid: "possui formato inválido."
+            cpf:
+              blank: "não pode ficar em branco."
+              format: "é inválido."
+              not_a_number: "deve ser um número."
+            telefone:
+              blank: "não pode ficar em branco."
+              not_a_number: "deve ser um número."
+
+  mercadopago:
+    status_pagamento:
+      approved: "Aprovado"
+      pending: "Pendente"
+      in_process: "Iniciado"
+      rejected: "Rejeitado"
+      refunded: "Reembolsado"
+      cancelled: "Cancelado"
+      in_mediation: "Em disputa"
+      charged_back: "Cobrado de volta"
+
+    detalhe_rejeicao:
+      cc_rejected_bad_filled_card_number: "Por favor realize um novo pedido. Motivo: Verifique o número do cartão."
+      cc_rejected_bad_filled_date: "Por favor realize um novo pedido. Motivo: Verifique a data de validade."
+      cc_rejected_bad_filled_other: "Por favor realize um novo pedido. Motivo: Revise os dados do cartão."
+      cc_rejected_bad_filled_security_code: "Por favor realize um novo pedido. Motivo: Revise o código de segurança"
+      cc_rejected_blacklist: "Por favor realize um novo pedido. Motivo: Não foi possível processar o pagamento. Tente um outro cartão."
+      cc_rejected_call_for_authorize: "Por favor realize um novo pedido. Motivo: Entre em contato com seu banco para autorizar o pagamento e tente novamente."
+      cc_rejected_card_disabled: "Por favor realize um novo pedido. Motivo: Ative o seu cartão. O telefone está no verso do seu cartão de crédito."
+      cc_rejected_card_error: "Por favor realize um novo pedido. Motivo: Não foi possível processar o pagamento."
+      cc_rejected_duplicated_payment: "Por favor realize um novo pedido. Motivo: Você já fez um pagamento desse valor. Se você precisa pagar novamente use outro cartão ou outro meio de pagamento."
+      cc_rejected_high_risk: "Por favor realize um novo pedido. Motivo: O seu pagamento foi recusado. Recomendamos que você pague com outros meios de pagamento oferecidos, preferencialmente à vista."
+      cc_rejected_insufficient_amount: "Por favor realize um novo pedido. Motivo: O seu cartão não tem limite suficiente."
+      cc_rejected_invalid_installments: "Por favor realize um novo pedido. Motivo: O seu cartão não processa pagamentos em para o número de parcelas selecionado."
+      cc_rejected_max_attempts: "Por favor realize um novo pedido. Motivo: Você atingiu o limite de tentativas permitidas. Use outro cartão ou um outro meio de pagamento."
+      cc_rejected_other_reason: "Por favor realize um novo pedido. Motivo: Não foi possível processar o pagamento."
+
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    - 
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+    month_names:
+    - 
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mês
+        other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors:
+    messages:
+      accepted: deve ser aceito
+      extension_white_list_error: "A extensão %{extension} não é permitida."
+      blank: não pode ficar em branco
+      present: deve ficar em branco
+      confirmation: não é igual a %{attribute}
+      empty: não pode ficar vazio
+      equal_to: deve ser igual a %{count}
+      even: deve ser par
+      exclusion: não está disponível
+      greater_than: deve ser maior que %{count}
+      greater_than_or_equal_to: deve ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: não é válido
+      less_than: deve ser menor que %{count}
+      less_than_or_equal_to: deve ser menor ou igual a %{count}
+      not_a_number: Informe o campo
+      not_an_integer: não é um número inteiro
+      odd: deve ser ímpar
+      record_invalid: 'A validação falhou: %{errors}'
+      restrict_dependent_destroy:
+        one: Não é possível excluir o registro pois existe um %{record} dependente
+        many: Não é possível excluir o registro pois existem %{record} dependentes
+      taken: já está em uso
+      too_long: 'é muito longo (máximo: %{count} caracteres)'
+      too_short: 'é muito curto (mínimo: %{count} caracteres)'
+      wrong_length: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros.'
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de um total de <b>%{total}</b>
+      one_page:
+        display_entries:
+          one: Exibindo <b>1</b> %{entry_name}
+          other: Exibindo <b>%{count}</b> %{entry_name}
+          zero: Nenhum %{entry_name} encontrado
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+  views:
+    pagination:
+      first: "&laquo; Primeiro"
+      last: "Último &raquo;"
+      next: Próximo &rsaquo;
+      previous: "&lsaquo; Anterior"
+      truncate: "&hellip;"
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R$
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: bilhão
+            other: bilhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+          thousand: mil
+          trillion:
+            one: trilhão
+            other: trilhões
+          unit: ''
+      format:
+        delimiter: "."
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+        format: "%n%"
+    precision:
+      format:
+        delimiter: "."
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y, %H:%M"
+      short: "%d de %B, %H:%M"
+    pm: ''

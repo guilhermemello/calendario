@@ -1,0 +1,22 @@
+<%- model_class = Disciplina -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @disciplinas.each do |disciplina| %>
+      <tr>
+        <td><%= link_to disciplina.id, disciplina_path(disciplina) %></td>
+        <td><%= disciplina.nome %></td>
+  
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @disciplinas %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_disciplina_path,
+            :class => 'btn btn-primary' %>

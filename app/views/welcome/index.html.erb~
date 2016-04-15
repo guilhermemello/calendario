@@ -1,0 +1,7 @@
+<h1>.::Remember::.</h1>
+<p>Seja bem-vindo!!!</p>
+
+
+
+
+<%= image_tag("ruby2.jpg", :alt => "rss feed") %>

@@ -1,0 +1,21 @@
+pt-BR:
+  helpers:
+    application:
+      root: "Indice"
+    pages:
+      pages: "Páginas"
+  helpers:
+    actions: "Ações"
+    links:
+      back: "Voltar"
+      cancel: "Cancelar"
+      confirm: "Tem certeza?"
+      destroy: "Excluir"
+      new: "Novo"
+      edit: "Editar"
+      show: "Mostrar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Savar %{model}"
+      new: "Novo %{model}"
+      delete: "Excluir %{model}"

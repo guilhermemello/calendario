@@ -8,6 +8,8 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'carrierwave'
 gem "kaminari"
 gem "therubyracer"
+gem 'devise'
+gem 'pundit'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 # gem 'bootstrap-sass',       '3.2.0.0'

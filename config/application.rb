@@ -17,8 +17,15 @@ module Calendario
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+
+    config.i18n.available_locales = ['pt-BR']
+    config.i18n.default_locale = 'pt-BR'
     # config.i18n.default_locale = :de
+
+    config.active_record.default_timezone = 'Brasilia'
+    config.time_zone = 'Brasilia'
+
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

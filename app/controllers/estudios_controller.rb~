@@ -1,5 +1,5 @@
 class EstudiosController < ApplicationController
-  before_action :set_eestudio, only: [:show, :edit, :update, :destroy]
+  before_action :set_estudio, only: [:show, :edit, :update, :destroy]
 
   # GET /estudios
   # GET /estudios.json

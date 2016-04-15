@@ -1,6 +1,6 @@
 class CompromissosController < ApplicationController
   before_action :set_compromisso, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /compromissos
   # GET /compromissos.json
   def index

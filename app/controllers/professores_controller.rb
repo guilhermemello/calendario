@@ -1,6 +1,6 @@
 class ProfessoresController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /professors
   # GET /professors.json
   def index    

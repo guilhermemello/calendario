@@ -85,7 +85,7 @@ class EventosController < ApplicationController
     def preparar_form
       @professores = Professor.order :nome
       @disciplinas = Disciplina.order :nome
-      @studios = Estudio.order :nome
+      @estudios = Estudio.order :nome
     end
 
 end

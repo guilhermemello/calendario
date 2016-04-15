@@ -1,0 +1,37 @@
+<%- model_class = Professor -%>
+<%= form_tag(professores_path, :method => :get) do %>
+  <%= text_field_tag 'search', nil, placeholder: 'Entre com sua busca' %>
+  <%= submit_tag "Search" %>
+<% end %>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:matricula) %></th>
+      <th><%= model_class.human_attribute_name(:celular) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:foto) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @professors.each do |professor| %>
+      <tr>
+        <td><%= link_to professor.id, professore_path(professor) %></td>
+        <td><%= professor.nome %></td>
+        <td><%= professor.matricula %></td>
+        <td><%= professor.celular %></td>
+        <td><%= professor.email %></td>
+        <td><%= professor.foto %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @professors %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_professore_path,
+            :class => 'btn btn-primary' %>

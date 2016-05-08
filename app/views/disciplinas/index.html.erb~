@@ -7,3 +7,4 @@
   <% else %>
     <%= render partial: "normal_user_index" %>
   <% end %>
+</div>

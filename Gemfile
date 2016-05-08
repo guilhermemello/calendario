@@ -8,12 +8,8 @@ gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'carrierwave'
 gem "kaminari"
 gem "therubyracer"
-gem 'devise'
-gem 'pundit'
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
-# gem 'bootstrap-sass',       '3.2.0.0'
-gem "watu_table_builder", :require => "table_builder"
+ gem 'bcrypt', '~> 3.1.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -51,6 +47,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-#  gem 'spring'
+  gem 'spring'
 end
 

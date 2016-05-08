@@ -1,12 +1,13 @@
 class ProfessoresController < ApplicationController
+  before_filter :authorize
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  
   # GET /professors
   # GET /professors.json
   def index    
     if params[:search]                        
       @professors = Professor.where("nome like ?", "%#{params[:search]}%")
-      
+      @professors = @professors.page(params['page']).per(5)
     else 
       # @professors = professor.all
       @professors = Professor.all.page(params['page']).per(5)

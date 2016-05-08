@@ -1,0 +1,82 @@
+Insert into disciplinas( nome) VALUES ('Astronomia');
+Insert into disciplinas( nome) VALUES ('Biologia');
+Insert into disciplinas( nome) VALUES ('Química');
+Insert into disciplinas( nome) VALUES ('Física');
+Insert into disciplinas( nome) VALUES ('Geociências');
+Insert into disciplinas( nome) VALUES ('Saúde');
+Insert into disciplinas( nome) VALUES ('Matemática');
+Insert into disciplinas( nome) VALUES ('Ciências da Computação');
+Insert into disciplinas( nome) VALUES ('História');
+Insert into disciplinas( nome) VALUES ('Antropologia');
+Insert into disciplinas( nome) VALUES ('Comunicações');
+Insert into disciplinas( nome) VALUES ('Economia');
+Insert into disciplinas( nome) VALUES ('Administração de Empresas');
+Insert into disciplinas( nome) VALUES ('Ciências Contábeis');
+Insert into disciplinas( nome) VALUES ('Arquitetura e Urbanismo');
+Insert into disciplinas( nome) VALUES ('Direito');
+Insert into disciplinas( nome) VALUES ('Educação Física');
+Insert into disciplinas( nome) VALUES ('Ciências Militares');
+Insert into disciplinas( nome) VALUES ('Artes Plásticas');
+Insert into disciplinas( nome) VALUES ('Música');
+
+----------------------
+
+INSERT INTO professores(nome) VALUES('Alexandre Soares');
+INSERT INTO professores(nome) VALUES('Isabel Vega');
+INSERT INTO professores(nome) VALUES('Arenildo dos Santos');
+INSERT INTO professores(nome) VALUES('Rachel Ribeiro');	
+INSERT INTO professores(nome) VALUES('Vanessa Desto');
+INSERT INTO professores(nome) VALUES('Letícia Rolim');
+INSERT INTO professores(nome) VALUES('Jacy Figueiredo da Silva');
+
+-----------------
+
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Artista70','Rua dos Artistas, 70, Tijuca - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio HP Studio','Rua Hermengarda, 60/205, Méier - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Sound City','Rua Riachuelo, 31, 13 andar - Centro - Curitiba(PR)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio LL Estudio e Produções','Rua Paranapanema, 107 a, Olaria - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('stúdio OMNI','Rua da Alfândega, 25/904, Centro - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Ouvido em Pé','Av. N.S. de Copacabana,613 - sala 608, Copacabana - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Majorem','Rua Conde de Bonfim, 229 L, Tijuca - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Ratel','Rua São Clemente, 37, Botafogo - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Meca Estúdio','Rua Visconde de Abaeté, 34, Vila Isabel - Rio de Janeiro(RJ)');
+INSERT INTO estudios(nome, endereco) VALUES('Estúdio Mendhl','Rua General Castrioto, 481, Barreto - Niterói(RJ)');
+
+
+ALTER TABLE disciplinas_Professores ADD COLUMN disciplina_id INTEGER;
+
+ALTER TABLE disciplinas_Professores ADD COLUMN professor_id INTEGER;
+
+
+Relação de chaves estrangeiras no projeto Calendário:
+
+ALTER TABLE disciplinas_Professores
+ADD CONSTRAINT fk_dd FOREIGN KEY (disciplina_id)
+REFERENCES disciplinas(id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;
+
+
+ALTER TABLE disciplinas_Professores
+ADD CONSTRAINT fk_dp FOREIGN KEY (professor_id)
+REFERENCES professores(id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;
+
+ALTER TABLE eventos
+ADD CONSTRAINT fk_ed FOREIGN KEY (disciplina_id)
+REFERENCES disciplinas(id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;
+
+ALTER TABLE eventos
+ADD CONSTRAINT fk_ep FOREIGN KEY (professor_id)
+REFERENCES professores(id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;
+
+ALTER TABLE eventos
+ADD CONSTRAINT fk_ee FOREIGN KEY (estudio_id)
+REFERENCES estudios(id)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;

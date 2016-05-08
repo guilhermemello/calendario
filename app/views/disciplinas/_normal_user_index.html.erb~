@@ -1,7 +1,8 @@
 <%- model_class = Disciplina -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+<%= form_tag(disciplinas_path, :method => :get) do %>
+  <%= text_field_tag 'search', nil, placeholder: 'Entre com sua busca' %>
+  <%= submit_tag "Search" %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -19,7 +20,7 @@
     <% end %>
   </tbody>
 </table>
-<%= paginate @disciplinas %>
+<%# paginate @disciplinas %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_disciplina_path,
             :class => 'btn btn-primary' %>

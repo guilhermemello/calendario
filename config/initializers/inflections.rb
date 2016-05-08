@@ -14,6 +14,7 @@
     inflect.plural 'disciplina_professor','disciplinas_professores'
     inflect.plural  'evento','eventos'
     inflect.plural  'estudio','estudios'
+    inflect.plural  'user','users'
 end
 
 # These inflection rules are supported but not enabled by default:

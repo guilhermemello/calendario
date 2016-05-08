@@ -1,16 +1,28 @@
 Rails.application.routes.draw do
-  resources :estudios
-  resources :eventos
-  resources :eventos
-  resources :eventos
-  resources :eventos
+  get 'gif/cool'
+
+  get 'gif/free'
+
+  root to: 'gif#cool'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  get '/cool' => 'gif#cool'  
+  get '/sweet' => 'gif#sweet'  
+   
+
   get 'welcome/index'
-  root 'welcome#index'
-  resources :studios
+  
+  resources :estudios
   resources :eventos
   resources :compromissos
   resources :disciplinas
-  resources :mestres
+  resources :professores
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

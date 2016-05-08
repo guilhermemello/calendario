@@ -1,6 +1,7 @@
 class ProfessoresController < ApplicationController
+  before_filter :authorize
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /professors
   # GET /professors.json
   def index    

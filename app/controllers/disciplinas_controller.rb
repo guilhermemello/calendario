@@ -1,13 +1,14 @@
 class DisciplinasController < ApplicationController
+  before_filter :authorize
   before_action :set_disciplina, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+
   # GET /disciplinas
   # GET /disciplinas.json
 
   def index
     if params[:search]                        
       @disciplinas = Disciplina.where("nome like ?", "%#{params[:search]}%")
-      
+      @disciplinas = @disciplinas.all.page(params['page']).per(10)
     else 
       # @disciplinas = Disciplina.all
      @disciplinas = Disciplina.all.page(params['page']).per(10)

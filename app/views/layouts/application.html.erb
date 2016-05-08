@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Calendario" %></title>
+    <style>
+      p {
+        color: green;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -37,6 +43,23 @@
     <![endif]-->
   </head>
   <body>
+    <!-- jquery -->
+   <script>
+     $( "ul" )
+      .on( "mouseenter", function() {
+       $( this ).css({
+        "background-color": "blue",
+         "font-weight": "bolder"
+      });
+     })
+     .on( "mouseleave", function() {
+       var styles = {
+       backgroundColor : "#ddd",
+       fontWeight: ""
+     };
+     $( this ).css( styles );
+    });
+  </script>
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -51,21 +74,14 @@
         </button>
         <a class="navbar-brand" href="#">Calendario</a>
        </div>
+       <% if current_user %>
+          Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %>
     </div>
 
     <div class="container">
-      <% if user_signed_in? %>
-          <ul>
-            <li><%= current_user.email %></il>
-            <li><%= user_session %></li>
-            <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-         </ul>
-       <% else %>
-         <ul>
-           <li><%= link_to "Cadastro de novo usuário", new_user_registration_path %></li>
-           <li><%= link_to "Logar", new_user_session_path %></li>
-        </ul>
-      <% end %>
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
@@ -82,7 +98,7 @@
               <li><%= link_to "Discplina", disciplinas_path  %></li>
               <li><%= link_to "Professor", professores_path  %></li>
               <li><%= link_to "Estudio", estudios_path  %></li>
-              <li><%= link_to "Usuario", control_users_index_path  %></li>
+              <li><%# link_to "Usuario", control_users_index_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

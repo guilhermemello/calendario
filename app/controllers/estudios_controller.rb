@@ -1,6 +1,7 @@
 class EstudiosController < ApplicationController
+  before_filter :authorize
   before_action :set_estudio, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  
   # GET /estudios
   # GET /estudios.json
   def index
